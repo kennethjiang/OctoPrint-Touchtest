@@ -19,11 +19,11 @@ $(function() {
     self.isPrinting = ko.observable(undefined);
 
     self.testPrint = function(wMult, dMult) {
-      wEffective = self.bedWidth() - 2* self.edgeOffset()
-      dEffective = self.bedDepth() - 2* self.edgeOffset()
-      xPos = 1.0*self.edgeOffset() + (wMult*wEffective);
-      yPos = 1.0*self.edgeOffset() + (dMult*dEffective);
-      code = "G0";
+      var wEffective = self.bedWidth() - 2* self.edgeOffset()
+      var dEffective = self.bedDepth() - 2* self.edgeOffset()
+      var xPos = 1.0*self.edgeOffset() + (wMult*wEffective);
+      var yPos = 1.0*self.edgeOffset() + (dMult*dEffective);
+      var code = "G0";
       code += " X" + xPos;
       code += " Y" + yPos;
       code += " F" + self.feedrate();
